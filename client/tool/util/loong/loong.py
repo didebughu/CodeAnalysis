@@ -62,6 +62,8 @@ class Loong(object):
         spc.wait()
 
         output_path = os.path.join(self.dbdir, "result.json")
+        if not os.path.exists(output_path):
+            return []
         f = open(output_path)
         result = json.load(f)
         f.close()
